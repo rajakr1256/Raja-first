@@ -1,0 +1,126 @@
+---
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="My website description" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<title>{title}</title>
+		<style>
+			* {
+				font-family: protest-riot, sans-serif;
+				font-style: normal;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: system-ui, sans-serif;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				background: #2A7B9B;
+				background: #000000;
+				background: #000000;
+background: linear-gradient(0deg, rgba(0, 0, 0, 1) 28%, rgba(85, 71, 204, 1) 100%);
+			}
+
+			.header {
+				padding: 20px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				border-bottom: 1px;
+			}
+
+			.logo {
+				font-size: 24px;
+				font-weight: bold;
+			}
+
+			.menu {
+				font-size: 18px;
+			}
+
+			.main-wrapper {
+				flex: 1;
+				display: flex;
+				gap: 20px;
+				padding: 20px;
+			}
+
+			.content-area {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+
+
+
+			.main-content {
+				color: #333;
+				padding: 40px;
+				flex: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 24px;
+				border: 1px;
+			}
+
+			.right-section {
+				width: 300px;
+				color: #666;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 18px;
+				border: 1px;
+			}
+			.footer {
+
+				color: #333;
+				padding: 30px;
+				text-align: center;
+				font-size: 24px;
+				border-top: 1px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header">
+			<div class="logo">
+				<slot name="logo">Logo</slot>
+			</div>
+			<div class="home">
+				<slot name="home">HOME</slot>
+				<slot name="work">WORK</slot>
+				<slot name="interest">INTEREST</slot>
+							</div>
+		</header>
+
+		<div class="main-wrapper">
+			<div class="content-area">
+				<section class="title-section">
+					<slot name="title">
+						<h1 style="font-size: 60px;""font-family:sans-sans-serif;">Raja Kumar</h1>
+					</slot>
+				</section>
+				<main class="main-content">
+					<slot name="main">Main Content</slot>
+				</main>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<slot name="footer">Footer</slot>
+		</footer>
+
+	</body>
+</html>
